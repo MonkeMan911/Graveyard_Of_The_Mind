@@ -1,31 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CS_Player_Movement : MonoBehaviour
 {
-    Rigidbody rb;
-    float speed;
-    void Start()
+    [SerializeField] Rigidbody rb;
+    [SerializeField] float horizontalSpeed;
+    [SerializeField] float verticalSpeed;
+    [SerializeField] bool isSneak;
+    [SerializeField] GameObject player;
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        float z = Input.GetAxis("Vertical") * verticalSpeed;
+        float x = Input.GetAxis("Horizontal") * horizontalSpeed;
+
+        z *= Time.deltaTime;
+        x *= Time.deltaTime;
+
+        transform.Translate(x, 0, z);
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.forward * speed);
+            transform.Translate(new Vector3(0, 10, 0));
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            rb.AddForce(Vector3.back * speed);
+            transform.Translate(new Vector3(0, -10, 0));
         }
-        if (Input.GetKeyDown(KeyCode.A))
+
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            rb.AddForce(Vector3.left * speed);
+            isSneak = true;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        else
         {
-            rb.AddForce(Vector3.right * speed);
+            isSneak = false;
         }
+        if (isSneak)
+        {
+            Sneaking();
+        }
+        else
+        {
+            NotSneaking();
+        }
+       
+    }
+
+    public void Sneaking()
+    {
+        player.transform.localScale = new Vector3(1, 0.5f, 1);
+    }
+    public void NotSneaking()
+    {
+        player.transform.localScale = new Vector3(1, 1, 1);
     }
 }
