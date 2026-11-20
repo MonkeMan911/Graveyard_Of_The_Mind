@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class CS_Passcode_Check : MonoBehaviour
 {
@@ -8,12 +9,16 @@ public class CS_Passcode_Check : MonoBehaviour
 
     [SerializeField] private GameObject gO;
     [SerializeField] private TMP_Text reactionText;
+    [SerializeField] private TMP_Text hiddenPasscodeText;
+    [SerializeField] private UnityEvent correctPass;
+    [SerializeField] private UnityEvent incorrectPass;
 
     private bool bIsPasscodeCorrect;
 
     private void Start()
     {
         passcode = Random.Range(1000, 9999).ToString();
+        hiddenPasscodeText.text = passcode;
     }
     public void GrabFromInputField(string input) 
     {
@@ -25,14 +30,17 @@ public class CS_Passcode_Check : MonoBehaviour
     {
         if (inputT == passcode)
         {
-            reactionText.text = "thats right the correct passcode is " + inputT + "!";
+            reactionText.text = "Correct passcode " + inputT + "!";
             gO.SetActive(true);
             bIsPasscodeCorrect = true;
+            correctPass.Invoke();
         }
         else 
         {
-            reactionText.text = "incorrect answer the correct answer is " + passcode + "!";
+            gO.SetActive(true);
+            reactionText.text = "Incorrect answer try again!";
             bIsPasscodeCorrect = false;
+            incorrectPass.Invoke();
         }
     }
 }
