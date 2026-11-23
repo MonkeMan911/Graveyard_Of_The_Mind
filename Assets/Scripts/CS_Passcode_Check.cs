@@ -13,8 +13,6 @@ public class CS_Passcode_Check : MonoBehaviour
     [SerializeField] private UnityEvent correctPass;
     [SerializeField] private UnityEvent incorrectPass;
 
-    private bool bIsPasscodeCorrect;
-
     private void Start()
     {
         passcode = Random.Range(1000, 9999).ToString();
@@ -27,14 +25,12 @@ public class CS_Passcode_Check : MonoBehaviour
         {
             reactionText.text = "Correct passcode " + inputT + "!";
             gO.SetActive(true);
-            bIsPasscodeCorrect = true;
             correctPass.Invoke();
         }
         else 
         {
             gO.SetActive(true);
             reactionText.text = "Incorrect answer try again!";
-            bIsPasscodeCorrect = false;
             incorrectPass.Invoke();
         }
     }
