@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UI.Extensions;
 
 public class CS_Enter_Code : MonoBehaviour
 {
-    
+    [SerializeField] InputFieldEnterSubmit inputFieldEnterSubmit;
     [SerializeField] TMP_InputField inputField;
     void Start()
     {
@@ -34,5 +35,6 @@ public class CS_Enter_Code : MonoBehaviour
     }
     public void EnterNumPad() 
     {
+
     }
 }
