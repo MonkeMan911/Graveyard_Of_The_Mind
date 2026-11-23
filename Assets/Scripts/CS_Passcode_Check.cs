@@ -1,15 +1,15 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class CS_Passcode_Check : MonoBehaviour
 {
-    [SerializeField] private string inputT;
-    [SerializeField] private string passcode;
+    [SerializeField] public string inputT;
+    [SerializeField] public string passcode;
 
     [SerializeField] private GameObject gO;
-    [SerializeField] private TMP_Text reactionText;
-    [SerializeField] private TMP_Text hiddenPasscodeText;
+    [SerializeField] private Text reactionText;
+    [SerializeField] private Text hiddenPasscodeText;
     [SerializeField] private UnityEvent correctPass;
     [SerializeField] private UnityEvent incorrectPass;
 
@@ -19,11 +19,6 @@ public class CS_Passcode_Check : MonoBehaviour
     {
         passcode = Random.Range(1000, 9999).ToString();
         hiddenPasscodeText.text = passcode;
-    }
-    public void GrabFromInputField(string input) 
-    {
-        inputT = input;
-        DisplayInput();
     }
 
     public void DisplayInput() 
