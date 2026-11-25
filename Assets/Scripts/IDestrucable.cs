@@ -1,4 +1,4 @@
 public interface IDestrucable
 {
-    public void Destroy() { }
+    public void DestroyDirt() {}
 }

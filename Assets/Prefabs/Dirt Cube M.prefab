@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2296600015013712829}
-  - component: {fileID: 8770351371851621861}
   - component: {fileID: 4514317097175994692}
   - component: {fileID: 166702639324845478}
   - component: {fileID: 6782483799369710693}
   - component: {fileID: 1688613088810463494}
-  m_Layer: 0
-  m_Name: Dirt Cube
+  - component: {fileID: 3088303946870140015}
+  m_Layer: 6
+  m_Name: Dirt Cube M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,20 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8770351371851621861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3550855980855731319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3fd5ffd6c77a8946ad03df974d1a5b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dirtPrefab: {fileID: 3550855980855731319}
-  spawnPoint: {x: -25.89, y: 0.211, z: 2.32}
 --- !u!33 &4514317097175994692
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,3 +137,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3088303946870140015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550855980855731319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5f4926c1c90424d91d6285bf3f5c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
