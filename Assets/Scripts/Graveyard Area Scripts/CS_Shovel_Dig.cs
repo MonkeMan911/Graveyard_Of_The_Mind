@@ -2,6 +2,8 @@ using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEngine.Rendering.DebugUI;
 
 public class CS_Shovel_Dig : MonoBehaviour, IInteractable
 {
@@ -47,6 +49,20 @@ public class CS_Shovel_Dig : MonoBehaviour, IInteractable
         {
             DigWithShovel();
         }
+        Ray ray = new Ray(playerCam.position, playerCam.forward); //Creates a RayCast from the player 
+        if (Physics.Raycast(ray, out hitInfo, interactDis, dirtLayer)) //if RayCast Hits the desired Layer then execute Below
+        {
+            Debug.DrawRay(playerCam.position, playerCam.forward * hitInfo.distance, Color.green); //Shows Raycast as green in the scene
+            if (!highlighted) //if canTp is false then Execute
+            {
+                HighlightDirt(); //Runs The Teleport Check Function if the RayCast Hits Enemy Layer and canTp == False
+                highlighted = true; //sets to true so it cannot be executed again
+            }
+        }
+        else 
+        {
+            UnHighlight();
+        }
     }
 
     void DigWithShovel() 
@@ -62,11 +78,6 @@ public class CS_Shovel_Dig : MonoBehaviour, IInteractable
             if (hitInfo.collider.gameObject.TryGetComponent(out IDestrucable destrucableObject)) 
             {
                 destrucableObject.DestroyDirt();
-                if (!highlighted) 
-                {
-                    HighlightDirt();
-                    highlighted = true;
-                }
             }
         } 
     }
@@ -83,14 +94,14 @@ public class CS_Shovel_Dig : MonoBehaviour, IInteractable
         {
             return;
         }
-        Collider[] dirtColliders = hitInfo.collider.gameObject.GetComponents<MeshCollider>();
+        Collider[] dirtColliders = hitInfo.collider.gameObject.GetComponents<Collider>();
         foreach (Collider collider in dirtColliders) 
         {
             MeshRenderer meshRenderer = collider.gameObject.GetComponent<MeshRenderer>();
             if (meshRenderer != null)
             {
                 meshRenderer.materials = outMaterials;
-                outlinedMats.Add(meshRenderer); 
+                outlinedMats.Add(meshRenderer);
             }
         }
     }
