@@ -49,14 +49,14 @@ public class CS_Shovel_Dig : MonoBehaviour, IInteractable
         {
             DigWithShovel();
         }
-        Ray ray = new Ray(playerCam.position, playerCam.forward); //Creates a RayCast from the player 
-        if (Physics.Raycast(ray, out hitInfo, interactDis, dirtLayer)) //if RayCast Hits the desired Layer then execute Below
+        Ray ray = new Ray(playerCam.position, playerCam.forward);
+        if (Physics.Raycast(ray, out hitInfo, interactDis, dirtLayer)) 
         {
-            Debug.DrawRay(playerCam.position, playerCam.forward * hitInfo.distance, Color.green); //Shows Raycast as green in the scene
-            if (!highlighted) //if canTp is false then Execute
+            Debug.DrawRay(playerCam.position, playerCam.forward * hitInfo.distance, Color.green); 
+            if (!highlighted) 
             {
-                HighlightDirt(); //Runs The Teleport Check Function if the RayCast Hits Enemy Layer and canTp == False
-                highlighted = true; //sets to true so it cannot be executed again
+                HighlightDirt(); 
+                highlighted = true; 
             }
         }
         else 
