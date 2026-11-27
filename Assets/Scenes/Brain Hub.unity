@@ -255,6 +255,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453075}
   m_CullTransparentMesh: 1
+--- !u!1 &1724509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4190937670319743239, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+  m_PrefabInstance: {fileID: 1440720366019097047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1724513
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: 7d7ecb6733623954685d692aa2ad960d, type: 3}
 --- !u!1 &14018446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1281,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413843216}
   m_CullTransparentMesh: 1
+--- !u!1 &416122789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5915998511879036437, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+  m_PrefabInstance: {fileID: 1440720366019097047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &416122793
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416122789}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: 7d7ecb6733623954685d692aa2ad960d, type: 3}
 --- !u!1 &419516034
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,14 +5981,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1581978520390719147, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6979826031074781982, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
       propertyPath: m_Name
       value: Brain Dome Test 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9200044430511445748, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200044430511445748, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5915998511879036437, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 416122793}
+    - targetCorrespondingSourceObject: {fileID: 4190937670319743239, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1724513}
   m_SourcePrefab: {fileID: 100100000, guid: 59f81fb7e46e76e4b995d5fc6625a230, type: 3}
 --- !u!4 &2309533320567726577
 Transform:
